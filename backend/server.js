@@ -66,6 +66,18 @@ connection.connect((err) => {
 // Middleware to parse JSON bodies
 app.use(express.json());
 var cors = require("cors");
+app.use(function (req, res, next) {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "[6](https://frontend-updated-deploy.onrender.com)"
+  ); // You can also use '*' to allow any origin
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, OPTIONS, PUT, PATCH, DELETE"
+  );
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 app.use(
   cors({
     origin: [
