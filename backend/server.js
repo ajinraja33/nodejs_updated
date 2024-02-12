@@ -66,7 +66,14 @@ connection.connect((err) => {
 // Middleware to parse JSON bodies
 app.use(express.json());
 var cors = require("cors");
-app.use(cors({ origin: ["http://localhost:3001", "http://127.0.0.1:3001"] }));
+app.use(
+  cors({
+    origin: [
+      "https://frontend-updated-deploy.onrender.com/",
+      "https://frontend-updated-deploy.onrender.com/",
+    ],
+  })
+);
 // Route to handle POST requests
 // const pool = require("./db");
 
